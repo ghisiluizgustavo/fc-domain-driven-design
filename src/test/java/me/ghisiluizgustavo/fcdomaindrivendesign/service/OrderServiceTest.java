@@ -21,7 +21,7 @@ public class OrderServiceTest {
 
         final double total = OrderService.total(List.of(order1, order2));
 
-        Assertions.assertEquals(total, 300.0);
+        Assertions.assertEquals(300.0, total);
     }
 
 }
