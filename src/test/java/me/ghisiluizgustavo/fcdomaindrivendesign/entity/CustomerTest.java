@@ -1,7 +1,5 @@
-package me.ghisiluizgustavo.fcdomaindrivendesign;
+package me.ghisiluizgustavo.fcdomaindrivendesign.entity;
 
-import me.ghisiluizgustavo.fcdomaindrivendesign.entity.Address;
-import me.ghisiluizgustavo.fcdomaindrivendesign.entity.Customer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
