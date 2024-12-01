@@ -1,3 +1,3 @@
 package me.ghisiluizgustavo.fcdomaindrivendesign.entity;
 
-public record OrderItem(String id, String name, Double price, String productId) { }
+public record OrderItem(String id, String name, Double price, String productId, Integer quantity) { }

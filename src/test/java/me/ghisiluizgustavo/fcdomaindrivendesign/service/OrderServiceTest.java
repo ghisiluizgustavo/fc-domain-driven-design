@@ -1,5 +1,6 @@
 package me.ghisiluizgustavo.fcdomaindrivendesign.service;
 
+import me.ghisiluizgustavo.fcdomaindrivendesign.entity.Customer;
 import me.ghisiluizgustavo.fcdomaindrivendesign.entity.Order;
 import me.ghisiluizgustavo.fcdomaindrivendesign.entity.OrderItem;
 import org.junit.jupiter.api.Assertions;
@@ -12,9 +13,9 @@ public class OrderServiceTest {
 
     @Test
     @DisplayName("Should get total of all orders")
-    public void test() {
-        final OrderItem item1 = new OrderItem("01", "Item 1", 100.0, "p1");
-        final OrderItem item2 = new OrderItem("02", "Item 2", 200.0, "p2");
+    public void getAllOrders() {
+        final OrderItem item1 = new OrderItem("01", "Item 1", 100.0, "p1", 1);
+        final OrderItem item2 = new OrderItem("02", "Item 2", 200.0, "p2", 1);
 
         final Order order1 = new Order("01", "c1", List.of(item1));
         final Order order2 = new Order("02", "c1", List.of(item2));
@@ -22,6 +23,17 @@ public class OrderServiceTest {
         final double total = OrderService.total(List.of(order1, order2));
 
         Assertions.assertEquals(300.0, total);
+    }
+
+    @Test
+    @DisplayName("Should place an order")
+    public void placeOrder() {
+        final Customer customer1 = new Customer("01", "John Doe");
+        final OrderItem item1 = new OrderItem("01", "Item 1", 10.0, "p1", 1);
+        final Order order1 = OrderService.placeOrder(customer1, List.of(item1));
+
+        Assertions.assertEquals(5, customer1.getRewardPoints());
+        Assertions.assertEquals(10, order1.total());
     }
 
 }

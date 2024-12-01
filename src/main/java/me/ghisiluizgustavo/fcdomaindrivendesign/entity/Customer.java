@@ -6,6 +6,7 @@ public class Customer {
     private String name;
     private Address address;
     private Boolean active;
+    private double rewardPoints = 0;
 
     public Customer(final String id, final String name) {
         this.id = id;
@@ -35,6 +36,10 @@ public class Customer {
         return this.name;
     }
 
+    public String getId(){
+        return this.id;
+    }
+
     public void activate(){
         if (this.address == null) {
             throw new IllegalArgumentException("Address is mandatory to activate a customer");
@@ -48,5 +53,13 @@ public class Customer {
 
     public boolean isActive() {
         return this.active;
+    }
+
+    public void addRewardPoints(double rewardPoints) {
+        this.rewardPoints += rewardPoints;
+    }
+
+    public double getRewardPoints() {
+        return rewardPoints;
     }
 }
