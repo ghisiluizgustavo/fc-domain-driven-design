@@ -1,8 +1,9 @@
-package me.ghisiluizgustavo.fcdomaindrivendesign.entity;
+package me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity;
+
 
 public class Product {
 
-    private String id;
+    private final String id;
     private String name;
     private double price;
 
@@ -14,10 +15,6 @@ public class Product {
     }
 
     private void validate(){
-        if (this.id.isEmpty()) {
-            throw new IllegalArgumentException("ID is empty");
-        }
-
         if (this.name.isEmpty()) {
             throw new IllegalArgumentException("Name is empty");
         }
@@ -37,5 +34,13 @@ public class Product {
 
     public double getPrice() {
         return price;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 }

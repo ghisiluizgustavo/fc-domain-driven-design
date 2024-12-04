@@ -1,4 +1,4 @@
-package me.ghisiluizgustavo.fcdomaindrivendesign.entity;
+package me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity;
 
 public record Address (String street, Integer number, String zip, String city) {
     public Address {

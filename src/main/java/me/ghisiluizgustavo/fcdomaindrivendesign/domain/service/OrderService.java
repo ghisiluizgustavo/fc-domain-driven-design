@@ -1,8 +1,8 @@
-package me.ghisiluizgustavo.fcdomaindrivendesign.service;
+package me.ghisiluizgustavo.fcdomaindrivendesign.domain.service;
 
-import me.ghisiluizgustavo.fcdomaindrivendesign.entity.Customer;
-import me.ghisiluizgustavo.fcdomaindrivendesign.entity.Order;
-import me.ghisiluizgustavo.fcdomaindrivendesign.entity.OrderItem;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Customer;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Order;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.OrderItem;
 
 import java.util.List;
 import java.util.UUID;

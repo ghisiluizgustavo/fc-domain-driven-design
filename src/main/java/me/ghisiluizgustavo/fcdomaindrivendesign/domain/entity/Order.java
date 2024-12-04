@@ -1,4 +1,4 @@
-package me.ghisiluizgustavo.fcdomaindrivendesign.entity;
+package me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity;
 
 import java.util.List;
 
