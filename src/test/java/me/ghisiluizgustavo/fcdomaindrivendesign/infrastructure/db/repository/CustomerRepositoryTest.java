@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class ProductRepositoryTest {
+public class CustomerRepositoryTest {
 
     @Autowired
     private ProductRepository repository;

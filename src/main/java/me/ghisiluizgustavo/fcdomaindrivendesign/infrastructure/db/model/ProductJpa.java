@@ -5,11 +5,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class ProductEntity {
+@Table(name = "products")
+public class ProductJpa {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -21,17 +22,17 @@ public class ProductEntity {
     private String name;
     private double price;
 
-    public ProductEntity() {
+    public ProductJpa() {
     }
 
-    public ProductEntity(String id, String name, double price) {
+    public ProductJpa(String id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    public static ProductEntity create(Product domainEntity) {
-        return new ProductEntity(
+    public static ProductJpa create(Product domainEntity) {
+        return new ProductJpa(
                 domainEntity.getId(),
                 domainEntity.getName(),
                 domainEntity.getPrice()

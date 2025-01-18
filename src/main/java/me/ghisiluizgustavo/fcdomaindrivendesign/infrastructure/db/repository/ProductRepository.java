@@ -2,7 +2,7 @@ package me.ghisiluizgustavo.fcdomaindrivendesign.infrastructure.db.repository;
 
 import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Product;
 import me.ghisiluizgustavo.fcdomaindrivendesign.domain.repository.ProductRepositoryInterface;
-import me.ghisiluizgustavo.fcdomaindrivendesign.infrastructure.db.model.ProductEntity;
+import me.ghisiluizgustavo.fcdomaindrivendesign.infrastructure.db.model.ProductJpa;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class ProductRepository implements ProductRepositoryInterface {
 
     @Override
     public void create(Product domainEntity) {
-        ProductEntity product = ProductEntity.create(domainEntity);
+        ProductJpa product = ProductJpa.create(domainEntity);
         repository.save(product);
     }
 
@@ -27,11 +27,15 @@ public class ProductRepository implements ProductRepositoryInterface {
 
     }
 
+    public void deleteAll() {
+        repository.deleteAll();
+    }
+
     @Override
     public Product find(String id) {
         return repository
                 .findById(id)
-                .map(ProductEntity::toDomain)
+                .map(ProductJpa::toDomain)
                 .orElseThrow();
     }
 
@@ -45,7 +49,7 @@ public class ProductRepository implements ProductRepositoryInterface {
         return repository
                 .findAll()
                 .stream()
-                .map(ProductEntity::toDomain)
+                .map(ProductJpa::toDomain)
                 .toList();
     }
 }
