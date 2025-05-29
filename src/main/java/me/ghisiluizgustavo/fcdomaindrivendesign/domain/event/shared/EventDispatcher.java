@@ -1,22 +1,29 @@
 package me.ghisiluizgustavo.fcdomaindrivendesign.domain.event.shared;
 
+import java.util.List;
 import java.util.Map;
 
 public class EventDispatcher implements EventDispatcherInterface {
 
-    private final Map<String, EventHandlerInterface> eventHandlerInterfaces;
+    private final Map<String, List<EventHandlerInterface>> eventHandlerInterfaces;
 
-    public EventDispatcher(Map<String, EventHandlerInterface> eventHandlerInterfaces) {
+    public EventDispatcher(Map<String, List<EventHandlerInterface>> eventHandlerInterfaces) {
         this.eventHandlerInterfaces = eventHandlerInterfaces;
     }
 
-    public EventHandlerInterface getEventHandler(String name) {
+    public List<EventHandlerInterface> getEventHandler(String name) {
         return eventHandlerInterfaces.get(name);
     }
 
     @Override
     public void notify(EventInterface event) {
+        final var eventName = event.getClass().getName();
 
+        if (this.eventHandlerInterfaces.containsKey(eventName)){
+            this.eventHandlerInterfaces.forEach((name, eventHandler) ->
+                    eventHandler.forEach(handler -> handler.handle(event))
+            );
+        }
     }
 
     @Override
@@ -24,16 +31,16 @@ public class EventDispatcher implements EventDispatcherInterface {
         if (!this.eventHandlerInterfaces.containsKey(eventName)){
             this.eventHandlerInterfaces.put(eventName, null);
         }
-        this.eventHandlerInterfaces.put(eventName, eventHandler);
+        this.eventHandlerInterfaces.put(eventName, List.of(eventHandler));
     }
 
     @Override
     public void unregister(String eventName, EventHandlerInterface eventHandler) {
-
+        this.eventHandlerInterfaces.remove(eventName);
     }
 
     @Override
     public void unregisterAll() {
-
+        this.eventHandlerInterfaces.clear();
     }
 }
