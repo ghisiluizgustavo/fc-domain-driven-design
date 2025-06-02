@@ -1,8 +1,9 @@
 package me.ghisiluizgustavo.fcdomaindrivendesign.domain.service;
 
-import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Customer;
-import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Order;
-import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.OrderItem;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.checkout.services.OrderService;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.customer.entity.Customer;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.checkout.entity.Order;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.checkout.entity.OrderItem;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

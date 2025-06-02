@@ -1,6 +1,7 @@
 package me.ghisiluizgustavo.fcdomaindrivendesign.infrastructure.db.repository;
 
-import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Product;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.product.entity.Product;
+import me.ghisiluizgustavo.fcdomaindrivendesign.infrastructure.product.model.ProductRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

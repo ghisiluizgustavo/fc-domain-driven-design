@@ -1,6 +1,7 @@
 package me.ghisiluizgustavo.fcdomaindrivendesign.domain.service;
 
-import me.ghisiluizgustavo.fcdomaindrivendesign.domain.entity.Product;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.product.entity.Product;
+import me.ghisiluizgustavo.fcdomaindrivendesign.domain.product.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
